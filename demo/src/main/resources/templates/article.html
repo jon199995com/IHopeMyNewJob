@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>1st POST</title>
+</head>
+<body>
+<h1>POST</h1>
+<div class="container">
+
+    <form method="post" th:action="@{/article}" th:object="${article}">
+        <div class="form-group">
+            <label for="text">Основной текст</label>
+            <textarea id="text"  placeholder="Основной текст" th:field="*{content}"></textarea>
+            <p th:text="'RESULT: ' + ${article.content}" />
+        </div>
+        <div><input type="submit"  value="Выполнить"></div>
+    </form>
+</div>
+</body>
+</html>
